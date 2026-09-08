@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "dynamic_array.h"
 #include "linked_list.h"
+#include "hash_table.h"
 
 int main(void) {
     DynamicArray a;
@@ -39,5 +41,26 @@ int main(void) {
     printf("get(0)=%d size=%d\n", ll_get(&l, 0), l.size);
 
     ll_free(&l);
+
+    printf("\ntable de hachage :\n");
+
+    HashTable *t = malloc(sizeof(HashTable));
+    hash_init(t);
+
+    for (int i = 0; i < 20; i++)
+        hash_insert(t, i * 1000);
+
+    printf("contains(5000)=%d contains(777)=%d\n",
+           hash_contains(t, 5000), hash_contains(t, 777));
+
+    hash_insert(t, -42);
+    printf("contains(-42)=%d\n", hash_contains(t, -42));
+
+    printf("hash_good(4523)=%d hash_good(14530)=%d hash_bad(4523)=%d\n",
+           hash_good(4523), hash_good(14530), hash_bad(4523));
+
+    hash_free(t);
+    free(t);
+
     return 0;
 }

@@ -12,3 +12,5 @@ Complexité tab :
 | insert_back | O(1) amorti | O(n) | Array |
 | remove_front | O(n) | O(1) | List |
 | Parcours complet | O(n) | O(n) | Égalité |
+
+
