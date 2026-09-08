@@ -14,3 +14,12 @@ Complexité tab :
 | Parcours complet | O(n) | O(n) | Égalité |
 
 
+Hash table : 
+
+| Opération | Moyenne | Pire cas |
+|---|---|---|
+| hash_insert | O(1) | O(1) |
+| hash_contains | O(1) | O(n) |
+| hash_free | O(n + m) | O(n + m) |
+
+n = nombre d'éléments, m = TABLE_SIZE
